@@ -37,41 +37,53 @@ function showTable() {
       var cell6 = newRow.insertCell(6);
       cell6.innerHTML =  `<input type="submit" value="view" style="background-color:#8aacc8"; onclick='show(${index})'>
       <input type="submit" value="Edit" style="background-color:#8aacc8" onclick='editEmployee(${index})'>
-       <input type="submit" value="delete" style="background-color:#8aacc8" onclick=onDelete(this)> `;
+      <input type="submit" value="DELETE"  id="delete" style="background-color:#8aacc8" onclick=onDelete(this)> `;
+      
    
     });
 }
 
 function editEmployee(index){
-  var name = employees[index].name;
-  var number = employees[index].number;
-  var email = employees[index].email;
-  var address= employees[index].address;
-  var city = employees[index].city;
-  var role = employees[index].role;
-  var ind = index;
-  const rowValue = {name,number,email,address,city,role,ind};
-  localStorage.setItem('rowValue',JSON.stringify(rowValue));
+
+  // let params = new URLSearchParams(document.location.search.substring(1))
+
+  // let name = params.get("name");
+  // let number = params.get("number")
+  // let email = params.get("email");
+  // let address = params.get("address");
+  // let city = params.get("city");
+  // let role = params.get("role");
+
+
+  // var name = employees[index].name;
+  // var number = employees[index].number;
+  // var email = employees[index].email;
+  // var address= employees[index].address;
+  // var city = employees[index].city;
+  // var role = employees[index].role;
+  // var ind = index;
+  // const rowValue = {name,number,email,address,city,role,ind};
+  // localStorage.setItem('rowValue',JSON.stringify(rowValue));
   location.href = "updateemployee.html?idx="+index;
 
 }
 function show(index) {
-  var name = employees[index].name;
-  var number = employees[index].number;
-  var email = employees[index].email;
-  var address= employees[index].address;
-  var city = employees[index].city;
-  var role = employees[index].role;
-  var ind = index
-  const rowValue = {name,number,email,address,city,role,ind};
-  localStorage.setItem('rowValue',JSON.stringify(rowValue));
+  // var name = employees[index].name;
+  // var number = employees[index].number;
+  // var email = employees[index].email;
+  // var address= employees[index].address;
+  // var city = employees[index].city;
+  // var role = employees[index].role;
+  // var ind = index
+  // const rowValue = {name,number,email,address,city,role,ind};
+  // localStorage.setItem('rowValue',JSON.stringify(rowValue));
   
   location.href="viewemployee.html?idx="+index;
 
   
 }
-
 function onDelete(element) {
+    
   selectedRow = element.parentElement.parentElement;
   employeeIndex = selectedRow.getAttribute('index');
   employeeIndex = parseInt(employeeIndex)
@@ -80,64 +92,8 @@ function onDelete(element) {
   employees.splice(employeeIndex,1);
   console.log(employees)
   localStorage.setItem('employees', JSON.stringify(employees));
+
+  // location.href = "showemployee.html" ;
   
 }
 
-
-
-// function updateEmployee(){
-//   let employee = {
-//       name: nameElem.value,
-//       number: numberElem.value,
-//       email: emailElem.value,
-//       address: addressElem.value,
-//       city: cityElem.value,
-//       role: roleElem.value,
-     
-//     }
-
-//     employees[employeeIndex] = employee;
-//     localStorage.setItem('employees',JSON.stringify(employees))
-//     let selectedRow = document.querySelector('[index="'+employeeIndex+'"]')
-
-//     selectedRow.cells[0].innerHTML = employee.name;
-//     selectedRow.cells[1].innerHTML = employee.number;
-//     selectedRow.cells[2].innerHTML = employee.email;
-//     selectedRow.cells[3].innerHTML = employee.address;
-//     selectedRow.cells[4].innerHTML = employee.city;
-//     selectedRow.cells[5].innerHTML = employee.role;
-   
-   
-// }
-
-// function onFormSubmit(e) {
-//   e.preventDefault()
-
-//   if(employeeIndex != null) updateEmployee();
-//   else createEmployee();
-// // console.log(localStorage.getItem('employees'));
-// }
-
-
-// function editEmployee(element) {
-  
-//   console.log("edited");
-  
-//   selectedRow = element.parentElement.parentElement;
-
-//   employeeIndex = selectedRow.getAttribute('index');
-
-//   let employee = employees[employeeIndex];
-//   console.log(employee)
-  
-//   document.getElementById("name").value = employee.name;
-//   document.getElementById("number").value =employee.number;
-//   document.getElementById("email").value = employee.email;
-//   document.getElementById("address").value = employee.address;
-//   document.getElementById("city").value = employee.city;
-//   document.getElementById("role").value = employee.role;
-  
-//   location.href = "updateemployee.html?idx="+index;
-  
-  
-// }

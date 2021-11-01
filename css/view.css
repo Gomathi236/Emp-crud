@@ -18,3 +18,13 @@ button{
     font-weight: bold;
     
   }
+  #delete{
+    background-color:#8aacc8;
+    border: none;
+    color:black;
+    padding: 15px;
+   
+    margin-top: 50px;
+    font-weight: bold;
+
+  }
