@@ -68,7 +68,7 @@ function onDelete(){
     
   
       
-      localStorage.removeItem('employee',JSON.stringify(employee))
+      localStorage.removeItem('employees',JSON.stringify(employees))
 
       location.href = "showemployee.html";
      
