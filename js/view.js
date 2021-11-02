@@ -35,6 +35,21 @@ let cityElem = document.getElementById("city");
 let roleElem = document.getElementById("role");
 let employeeIndex = null;
 
+// function onDelete(element) {
+//     selectedRow = element.parentElement.parentElement;
+//     employeeIndex = selectedRow.getAttribute('index');
+//     employeeIndex = parseInt(employeeIndex)
+//     selectedRow.remove();
+//     console.log( employeeIndex)
+//     employees.splice(employees,1);
+//     console.log(employees)
+//     localStorage.setItem('employees', JSON.stringify(employees));
+  
+//     location.href = "showemployee.html" ;
+    
+//   }
+
+
 function onDelete(){
   let datas= localStorage.getItem('employees');
   const employees = JSON.parse(datas);
