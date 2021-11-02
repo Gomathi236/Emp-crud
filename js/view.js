@@ -26,6 +26,54 @@ function view(){
     document.getElementById('city').innerHTML= emp[val].city;
     document.getElementById('role').innerHTML = emp[val].role;
 }
+let employees = [];
+let nameElem = document.getElementById("name");
+let numberElem = document.getElementById("number");
+let emailElem = document.getElementById("email");
+let addressElem = document.getElementById("address");
+let cityElem = document.getElementById("city");
+let roleElem = document.getElementById("role");
+let employeeIndex = null;
+
+function onDelete(){
+  let datas= localStorage.getItem('employees');
+  const employees = JSON.parse(datas);
+  const queryString = window.location.search;
+  console.log(queryString);
+  const urlParams = new URLSearchParams(queryString);
+  const emp = urlParams.get('idx')
+  console.log(emp)
+
+  const val = emp;
+
+    
+    
+        let employee = {
+        name: nameElem.value,
+        number: numberElem.value,
+        email: emailElem.value,
+        address: addressElem.value,
+        city: cityElem.value,
+        role: roleElem.value,
+       
+      }
+      employees[val].name = employee.name
+      employees[val].number = employee.number
+      employees[val].email = employee.email,
+      employees[val].address = employee.address,
+      employees[val].city =employee.city,
+      employees[val].role = employee.role,
+      
+      
+    
+  
+      
+      localStorage.removeItem('employee',JSON.stringify(employee))
+
+      location.href = "showemployee.html";
+     
+     
+  }
 
 
   
