@@ -36,8 +36,8 @@ function showTable() {
       cell5.innerHTML = employee.role;
       var cell6 = newRow.insertCell(6);
       cell6.innerHTML =  `<input type="submit" value="view" style="background-color:#8aacc8"; onclick='show(${index})'>
-      <input type="submit" value="Edit" style="background-color:#8aacc8" onclick='editEmployee(${index})'>
-      <input type="submit" value="DELETE"  id="delete" style="background-color:#8aacc8" onclick=onDelete(this)> `;
+      <input type="submit" value="Edit" style="background-color:#8aacc8" onclick='editEmployee(${index})'>`;
+//       <input type="submit" value="DELETE"  id="delete" style="background-color:#8aacc8" onclick=onDelete(this)> 
       
    
     });
@@ -82,18 +82,18 @@ function show(index) {
 
   
 }
-function onDelete(element) {
+// function onDelete(element) {
     
-  selectedRow = element.parentElement.parentElement;
-  employeeIndex = selectedRow.getAttribute('index');
-  employeeIndex = parseInt(employeeIndex)
-  selectedRow.remove();
-  console.log(employees, employeeIndex)
-  employees.splice(employeeIndex,1);
-  console.log(employees)
-  localStorage.setItem('employees', JSON.stringify(employees));
+//   selectedRow = element.parentElement.parentElement;
+//   employeeIndex = selectedRow.getAttribute('index');
+//   employeeIndex = parseInt(employeeIndex)
+//   selectedRow.remove();
+//   console.log(employees, employeeIndex)
+//   employees.splice(employeeIndex,1);
+//   console.log(employees)
+//   localStorage.setItem('employees', JSON.stringify(employees));
 
-  // location.href = "showemployee.html" ;
+//   // location.href = "showemployee.html" ;
   
-}
+// }
 
